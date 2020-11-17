@@ -10,13 +10,15 @@
                     <ul id="responsive">
                         <li><a class="current" href="#">ANA SAYFA</a>
                         </li>
-                        <li><a href="/">HAKKIMIZDA</a></li>
-                        <li><a href="/">FRANCHISE</a></li>
+                        <li><a href="{{route('about')}}">HAKKIMIZDA</a></li>
+                        <li><a href="{{route('agency.list')}}">OFİSLERİMİZ</a></li>
+                        <li><a href="{{route('agent.list')}}">DANIŞMANLARIMIZ</a></li>
+                        <li><a href="{{route('product.index')}}">İLANLARIMIZ</a></li>
+                        <li><a href="#">FRANCHISE</a></li>
                         <li><a href="https://turyapemlak.com.tr/">MÜZAYEDE</a></li>
-                        <li><a href="/">GLOBAL</a></li>
-                        <li><a href="/">VIP OFİS</a></li>
-                        <li><a href="/">HABERLER</a></li>
-                        <li><a href="/">TURYAP.NET</a></li>
+
+
+                        <li><a href="#">HABERLER</a></li>
                         <li><a href="/">İŞTİRAKLERİMİZ</a>
                             <ul>
                                 <li><a href="/">EMLAK HABER</a></li>

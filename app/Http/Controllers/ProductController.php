@@ -7,15 +7,16 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function filter()
+    public function filter(Request $request)
     {
-        //Yazılacak
+        $query=Product::query();
+
     }
 
     public function index()
     {
         $relationships = Product::relationships();
-        return Product::with($relationships)->get();
+        return ( Product::with($relationships)->limit(5)->get());
     }
 
     public function show(Request $request)
@@ -25,7 +26,7 @@ class ProductController extends Controller
         $fields= $arr->getAttributes();
 
         foreach ($fields as $key => $value) {
-            if ($key=='ID' || $key=='TUR_ID' || $key=='KAYIT_ID'){
+            if ($key=='id' || $key=='TUR_ID' || $key=='KAYIT_ID'){
                 unset($fields[$key]);
             }
             if ($arr[$key] == null) {
