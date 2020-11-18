@@ -41,30 +41,7 @@
 <!-- Wrapper -->
 <div id="wrapper">
     <!-- Header Container -->
-    <header id="header-container" class="fullwidth">
-        <!-- Header -->
-        <div id="header">
-            <div class="container">
-                <div class="left-side">
-                    <div id="logo"><a href="index.html"><img src="{{asset('images/logo.png?')}}" alt=""></a></div>
-
-                    @include('includes.menu')
-                </div>
-                <div class="right-side">
-                    <ul class="right-menu hidden-xs hidden-sm">
-                        <li><a href="#">FRANCHISE</a></li>
-                        <li><a href="#">TURYAPNET</a></li>
-                    </ul>
-                    <div class="header-widget">
-                        <div class="mmenu-trigger">
-                            <button class="hamburger hamburger--collapse" type="button"><span
-                                    class="hamburger-box"> <span class="hamburger-inner"></span> </span></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    @include('includes.header')
     <div class="clearfix"></div>
 
     <!-- Banner -->
@@ -80,25 +57,26 @@
                                 </h2>
                                 <span>From as low as $10 per day with limited time offer discounts.</span>
                             </div>
-                            <form class="utf-main-search-form-item">
+                            <form method="get" action="{{route('product.filter')}}" id="form"
+                                  class="utf-main-search-form-item">
                                 <div class="utf-search-type-block-area">
-                                    <div class="search-type">
+                                    <div class="search-type" style="text-align: center">
                                         <label class="active">
-                                            <input class="first-tab" name="tab" checked="checked"
-                                                   type="radio">Satılık</label>
+                                            <input class="first-tab" checked="checked"
+                                                   type="radio">Emlak
+                                        </label>
                                         <label>
-                                            <input name="tab" type="radio">Kiralık</label>
-                                        <label>
-                                            <input name="tab" type="radio">Danışmanlarımız</label>
-                                        <label>
-                                            <input name="tab" type="radio">Ofislerimiz</label>
+                                            <input type="radio">Danışmanlarımız
+                                        </label>
+
                                         <div class="utf-search-type-arrow"></div>
                                     </div>
                                 </div>
                                 <div class="utf-main-search-box-area">
                                     <div class="row with-forms">
                                         <div class="col-md-8 col-sm-12">
-                                            <input type="text" class="ico-01" placeholder="" value=""/>
+                                            <input type="text" name="search_text" class="ico-01" placeholder=""
+                                                   value=""/>
                                         </div>
 
                                         <div class="col-md-2 col-sm-6">
@@ -115,74 +93,72 @@
                                         <div class="utf-more-search-options-area-container">
                                             <div class="row with-forms">
                                                 <div class="col-md-4">
-                                                    <select data-placeholder="Property Status"
+                                                    <select name="category"
                                                             class="utf-chosen-select-single-item">
-                                                        <option>İlan Tipi</option>
-                                                        <option>Hepsi</option>
-                                                        <option>Kiralık</option>
-                                                        <option>Satılık</option>
+                                                        <option value="">İlan Tipi</option>
+                                                        <option value="">Hepsi</option>
+                                                        @foreach(\App\Models\Category::all() as $category)
+                                                            <option
+                                                                value="{{$category->kategori_id}}">{{$category->kategori}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <select data-placeholder="Property Type"
+                                                    <select name="type"
                                                             class="utf-chosen-select-single-item">
-                                                        <option> Mülk Türü</option>
-                                                        <option> Konut</option>
-                                                        <option> Ticari</option>
-                                                        <option> Arazi</option>
+
+                                                        <option value=""> Mülk Türü</option>
+                                                        @foreach(\App\Models\ProductType::all() as $type)
+                                                            <option
+                                                                value="{{$type->cinsi_id}}"> {{$type->cinsi}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <select data-placeholder="Max Rooms"
+                                                    <select name="room_count"
                                                             class="utf-chosen-select-single-item">
-                                                        <option>Oda Sayısı</option>
-                                                        <option>1 Oda</option>
-                                                        <option>2 Oda</option>
-                                                        <option>3 Oda</option>
-                                                        <option>4 Oda</option>
-                                                        <option>5 Oda</option>
+                                                        <option value="">Oda Sayısı</option>
+                                                        @foreach(\App\Models\RoomCount::all() as $roomCount)
+                                                            <option
+                                                                value="{{$roomCount->odasayisi_id}}">{{$roomCount->deger}}</option>
+                                                        @endforeach
+
                                                     </select>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <select data-placeholder="Bed"
+                                                    <select name="bath_count"
                                                             class="utf-chosen-select-single-item">
-                                                        <option>Yatak</option>
-                                                        <option>1 Yatak</option>
-                                                        <option>2 Yatak</option>
-                                                        <option>3 Yatak</option>
-                                                        <option>4 Yatak</option>
-                                                        <option>5 Yatak</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <select data-placeholder="Bath"
-                                                            class="utf-chosen-select-single-item">
-                                                        <option>Banyo</option>
-                                                        <option>1 Banyo</option>
-                                                        <option>2 Banyo</option>
-                                                        <option>3 Banyo</option>
-                                                        <option>4 Banyo</option>
-                                                        <option>5 Banyo</option>
+                                                        <option value="">Banyo</option>
+                                                        @foreach(\App\Models\BathCount::all() as $bathCount)
+                                                            <option
+                                                                value="{{$bathCount->banyosayisi_id}}">{{$bathCount->deger}}
+                                                                Banyo
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="select-input">
-                                                        <input type="text" placeholder="Min Fiyat" data-unit="TL">
+                                                        <input type="number" name="min_price" placeholder="Min Fiyat"
+                                                               data-unit="TL">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="select-input">
-                                                        <input type="text" placeholder="Max Fiyat" data-unit="TL">
+                                                        <input type="number" name="max_price" placeholder="Max Fiyat"
+                                                               data-unit="TL">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="select-input">
-                                                        <input type="text" placeholder="Min Alan" data-unit="m2">
+                                                        <input type="number" name="min_place" placeholder="Min Alan"
+                                                               data-unit="m2">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="select-input">
-                                                        <input type="text" placeholder="Max Alan" data-unit="m2">
+                                                        <input type="number" name="max_place" placeholder="Max Alan"
+                                                               data-unit="m2">
                                                     </div>
                                                 </div>
                                             </div>
@@ -831,6 +807,30 @@
         loop: true,
         showCursor: true
     });
+
+    $(document).ready(function () {
+        $("#form").submit(function () {
+            var qstring = ($("#form").serialize());
+            var strings = [];
+            qstring = qstring.split('&');
+            for (var i = 0; i < qstring.length; i++) {
+                var a = qstring[i].split('=');
+                if (a[1] != "") {
+                    strings.push(qstring[i]);
+                }
+            }
+            var newString='';
+            for(var i=0;i < strings.length; i++){
+                newString+=strings[i]+'&'
+            }
+            newString=(newString.slice(0,-1));
+
+            window.location.href="{{route('product.filter')}}"+'?'+newString;
+            return false;
+        });
+    });
 </script>
+
+
 </body>
 </html>

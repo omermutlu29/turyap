@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',function () {
     return view('index');
-});
+})->name('index');
 
 Route::prefix('agency')->group(function () {
     Route::get('list',[\App\Http\Controllers\AgencyController::class,'index'])->name('agency.list');
@@ -31,6 +31,7 @@ Route::prefix('agent')->group(function () {
 });
 
 Route::prefix('product')->group(function () {
+    Route::get('filter',[\App\Http\Controllers\ProductController::class,'filter'])->name('product.filter');
     Route::get('index',[\App\Http\Controllers\ProductController::class,'index'])->name('product.index');
     Route::get('show/{id}',[\App\Http\Controllers\ProductController::class,'show'])->name('product.show');
 });
