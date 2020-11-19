@@ -30,7 +30,9 @@ class ProductController extends Controller
             $query->where('oda_sayisi_id', $request->room_count);
         }
 
-        dd($query->get());
+        $products=($query->paginate(10));
+
+        return view('list',compact('products'));
 
 
     }
@@ -38,7 +40,8 @@ class ProductController extends Controller
     public function index()
     {
         $relationships = Product::relationships();
-        return (Product::with($relationships)->limit(5)->get());
+        $products= (Product::with($relationships)->paginate(10));
+        return view('list',compact('products'));
     }
 
     public function show(Request $request)
