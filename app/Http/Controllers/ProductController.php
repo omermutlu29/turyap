@@ -31,19 +31,19 @@ class ProductController extends Controller
         }
 
         if ($request->has('min_price') && $request->min_price != "") {
-            $query->where('fiyat', '<=', $request->min_price);
+            $query->where('fiyat', '>=', $request->min_price);
         }
 
         if ($request->has('max_price') && $request->max_price != "") {
-            $query->where('fiyat', '>=', $request->max_price);
+            $query->where('fiyat', '<=', $request->max_price);
         }
 
         if ($request->has('min_place') && $request->min_place != "") {
-            $query->where('alan', '<=', $request->min_place);
+            $query->where('alan', '>=', $request->min_place);
         }
 
         if ($request->has('max_place') && $request->max_place != "") {
-            $query->where('alan', '>=', $request->max_place);
+            $query->where('alan', '<=', $request->max_place);
         }
 
         $products = ($query->paginate(10));
