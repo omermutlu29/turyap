@@ -11,8 +11,8 @@ class ProductController extends Controller
     {
         $query = Product::query();
 
-        if ($request->has('search_text') && $request->search_text != ""){
-            $query->where('tanim','like','%'.$request->search_text.'%');
+        if ($request->has('search_text') && $request->search_text != "") {
+            $query->where('tanim', 'like', '%' . $request->search_text . '%');
         }
         if ($request->has('category') && $request->category != "") {
             $query->where('kategori_id', $request->category);
@@ -30,9 +30,25 @@ class ProductController extends Controller
             $query->where('oda_sayisi_id', $request->room_count);
         }
 
-        $products=($query->paginate(10));
+        if ($request->has('min_price') && $request->min_price != "") {
+            $query->where('fiyat', '<=', $request->min_price);
+        }
 
-        return view('list',compact('products'));
+        if ($request->has('max_price') && $request->max_price != "") {
+            $query->where('fiyat', '>=', $request->max_price);
+        }
+
+        if ($request->has('min_place') && $request->min_place != "") {
+            $query->where('alan', '<=', $request->min_place);
+        }
+
+        if ($request->has('max_place') && $request->max_place != "") {
+            $query->where('alan', '>=', $request->max_place);
+        }
+
+        $products = ($query->paginate(10));
+
+        return view('list', compact('products'));
 
 
     }
@@ -40,8 +56,8 @@ class ProductController extends Controller
     public function index()
     {
         $relationships = Product::relationships();
-        $products= (Product::with($relationships)->paginate(10));
-        return view('list',compact('products'));
+        $products = (Product::with($relationships)->paginate(10));
+        return view('list', compact('products'));
     }
 
     public function show(Request $request)
