@@ -1,23 +1,29 @@
+<form method="GET" action="{{route('product.filter')}}">
 <div class="widget utf-sidebar-widget-item">
     <div class="utf-boxed-list-headline-item">
         <h3>Yeni Ev Bul</h3>
     </div>
     <div class="row with-forms">
         <div class="col-md-6 col-sm-6 col-xs-6">
-            <select data-placeholder="Any Status" class="utf-chosen-select-single-item" style="display: none;">
-                <option>Tümü</option>
-                <option>Satılık</option>
-                <option>Kiralık</option>
+            <select name="category"
+                    class="utf-chosen-select-single-item">
+                <option value="">İlan Tipi</option>
+                <option value="">Hepsi</option>
+                @foreach(\App\Models\Category::all() as $category)
+                    <option
+                        value="{{$category->kategori_id}}">{{$category->kategori}}</option>
+                @endforeach
             </select>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6">
-            <select data-placeholder="Any Type" class="utf-chosen-select-single-item" style="display: none;">
-                <option>Tümü</option>
-                <option>Daireler</option>
-                <option>Evler</option>
-                <option>Ticari</option>
-                <option>Garajlar</option>
-                <option>Çok</option>
+            <select name="type"
+                    class="utf-chosen-select-single-item">
+
+                <option value=""> Mülk Türü</option>
+                @foreach(\App\Models\ProductType::all() as $type)
+                    <option
+                        value="{{$type->cinsi_id}}"> {{$type->cinsi}}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -26,26 +32,27 @@
     <!-- Row -->
     <div class="row with-forms">
         <div class="col-md-6">
-            <select data-placeholder="Beds" class="utf-chosen-select-single-item" style="display: none;">
-                <option label="blank"></option>
-                <option>Yataklar (Herhangi biri)</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            <select name="room_count"
+                    class="utf-chosen-select-single-item">
+                <option value="">Oda Sayısı</option>
+                @foreach(\App\Models\RoomCount::all() as $roomCount)
+                    <option
+                        value="{{$roomCount->odasayisi_id}}">{{$roomCount->deger}}</option>
+                @endforeach
+
             </select>
         </div>
 
         <div class="col-md-6">
-            <select data-placeholder="Baths" class="utf-chosen-select-single-item" style="display: none;">
-                <option label="blank"></option>
-                <option>Baths (Any)</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            <select name="bath_count"
+                    class="utf-chosen-select-single-item">
+                <option value="">Banyo</option>
+                @foreach(\App\Models\BathCount::all() as $bathCount)
+                    <option
+                        value="{{$bathCount->banyosayisi_id}}">{{$bathCount->deger}}
+                        Banyo
+                    </option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -54,18 +61,11 @@
     <!-- Row -->
     <div class="row with-forms">
         <div class="col-md-12">
-            <select data-placeholder="All States" class="chosen-select" style="display: none;">
-                <option>All States</option>
-                <option>Alabama</option>
-                <option>Alaska</option>
-                <option>Arizona</option>
-                <option>Arkansas</option>
-                <option>California</option>
-                <option>Colorado</option>
-                <option>Connecticut</option>
-                <option>Delaware</option>
-                <option>Florida</option>
-                <option>Georgia</option>
+            <select data-placeholder="ÜLKE" class="chosen-select" style="display: none;" id="country">
+                <option value=""></option>
+                @foreach(\App\Models\Country::all() as $country)
+                    <option value="{{$country->country_id}}">{{$country->country_name}}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -74,15 +74,8 @@
     <!-- Row -->
     <div class="row with-forms">
         <div class="col-md-12">
-            <select data-placeholder="All Cities" class="chosen-select" style="display: none;">
-                <option>All Cities</option>
-                <option>New York</option>
-                <option>Los Angeles</option>
-                <option>Chicago</option>
-                <option>Brooklyn</option>
-                <option>Queens</option>
-                <option>Houston</option>
-                <option>Manhattan</option>
+            <select data-placeholder="İL" class="chosen-select" style="display: none;" id="city">
+                <option value=""></option>
             </select>
         </div>
     </div>
@@ -127,3 +120,5 @@
     <!-- More Search Options / End -->
     <button class="button fullwidth margin-top-10">Arama</button>
 </div>
+</form>
+

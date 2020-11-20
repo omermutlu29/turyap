@@ -79,20 +79,9 @@
                             <!-- Listings Container / End -->
 
                             <!-- Pagination -->
-                            <div class="utf-pagination-container margin-top-20">
-                                <nav class="pagination">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                                        <li><a href="#" class="current-page">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li class="blank">...</li>
-                                        <li><a href="#">10</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <!-- Pagination / End -->
+                            {{$products->onEachSide(5)->withQueryString()->links('vendor.pagination.turyap-links')}}
+
+                        <!-- Pagination / End -->
                         </div>
                         <div class="tab-content" id="tab2">
                             <!-- Agents Container -->

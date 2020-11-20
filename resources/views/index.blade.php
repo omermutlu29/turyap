@@ -53,22 +53,17 @@
                     <div class="col-md-12">
                         <div class="utf-main-search-container-area">
                             <div class="utf-banner-headline-text-part">
-                                <h2>Best Place To Find <span class="typed-words">Dream</span><span class="typed-cursor">|</span>
-                                </h2>
+                                <h2>Ara <span class="typed-words">Dream</span><span class="typed-cursor">|</span></h2>
                                 <span>From as low as $10 per day with limited time offer discounts.</span>
                             </div>
                             <form method="get" action="{{route('product.filter')}}" id="form"
                                   class="utf-main-search-form-item">
                                 <div class="utf-search-type-block-area">
                                     <div class="search-type" style="text-align: center">
-                                        <label class="active">
+                                        <label style="display: none;" class="active">
                                             <input class="first-tab" checked="checked"
-                                                   type="radio">Emlak
+                                                   type="hidden">
                                         </label>
-                                        <label>
-                                            <input type="radio">Danışmanlarımız
-                                        </label>
-
                                         <div class="utf-search-type-arrow"></div>
                                     </div>
                                 </div>
@@ -84,12 +79,12 @@
                                             </button>
                                         </div>
                                         <div class="col-md-2 col-sm-6">
-                                            <a href="#" class="utf-utf-more-search-options-area-button"
+                                            <a href="#" class="utf-utf-more-search-options-area-button active"
                                                data-open-title="Detaylı Arama" data-close-title="Detaylı Arama"></a>
                                         </div>
                                     </div>
 
-                                    <div class="utf-more-search-options-area">
+                                    <div class="utf-more-search-options-area active">
                                         <div class="utf-more-search-options-area-container">
                                             <div class="row with-forms">
                                                 <div class="col-md-4">
@@ -799,7 +794,7 @@
 
 <script>
     var typed = new Typed('.typed-words', {
-        strings: ["Dream Home.", " Apartments.", " Residential.", " Commercial."],
+        strings: ["Ev", " Apartman", " Ofis", " Arsa"],
         typeSpeed: 80,
         backSpeed: 80,
         backDelay: 4000,

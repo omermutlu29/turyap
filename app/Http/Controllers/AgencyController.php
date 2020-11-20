@@ -17,7 +17,7 @@ class AgencyController extends Controller
     public function show(Request $request)
     {
         $agency= Agency::where('SIRKET_ID', $request->id)->with('agents','city','country','town')->firstOrFail();
-        $products=Product::where('SIRKET_ID',$request->id)->with(Product::relationships())->get();
+        $products=Product::where('SIRKET_ID',$request->id)->with(Product::relationships())->paginate(10);
         return view('agency_profile',compact('agency','products'));
     }
 

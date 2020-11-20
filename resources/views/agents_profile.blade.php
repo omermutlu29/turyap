@@ -34,19 +34,19 @@
         <div class="row sticky-wrapper">
             <div class="col-lg-8 col-md-8">
                 <div class="utf-desc-headline-item margin-top-0">
-                    <h3><i class="icon-material-outline-description"></i> My Listings</h3>
+                    <h3><i class="icon-material-outline-description"></i> İLANLAR</h3>
                 </div>
                 <!-- Sorting -->
                 <div class="utf-sort-box-aera">
                     <div class="sort-by">
-                        <label>Sort By:</label>
+                        <label>Şuna Göre Sırala:</label>
                         <div class="sort-by-select">
-                            <select data-placeholder="Default Properties" class="utf-chosen-select-single-item" >
-                                <option>Default Properties</option>
-                                <option>Low to High Price</option>
-                                <option>High to Low Price</option>
-                                <option>Newest Properties</option>
-                                <option>Oldest Properties</option>
+                            <select data-placeholder="Seçin" class="utf-chosen-select-single-item" >
+                                <option value="">Seçin</option>
+                                <option value="price_asc">Fiyata Göre Artan</option>
+                                <option value="price_desc">Fiyata Göre Azalan</option>
+                                <option value="new">Önce En Yeni</option>
+                                <option value="old">Önce En Eski</option>
                             </select>
                         </div>
                     </div>
@@ -67,20 +67,9 @@
                 <!-- Listings Container / End -->
 
                 <!-- Pagination -->
-                <div class="utf-pagination-container margin-top-20">
-                    <nav class="pagination">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li><a href="#" class="current-page">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li class="blank">...</li>
-                            <li><a href="#">10</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- Pagination / End -->
+                {{$products->onEachSide(5)->withQueryString()->links('vendor.pagination.turyap-links')}}
+
+            <!-- Pagination / End -->
             </div>
 
             <!-- Sidebar -->
@@ -105,3 +94,4 @@
         </div>
     </div>
 @endsection
+
