@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class BathCount extends Model
 {
     protected $table='urun_deger_banyosayisi';
-    protected $primaryKey = 'banyosayisi_id';
+    protected $primaryKey = 'BANYOSAYISI_ID';
 
     use HasFactory;
 }

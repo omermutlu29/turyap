@@ -9,7 +9,7 @@ class ProductField extends Model
 {
 
     protected $table='urun_alanlar';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'ID';
 
     use HasFactory;
 }

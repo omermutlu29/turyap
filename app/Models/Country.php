@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
-    protected $primaryKey = 'country_id';
+    protected $primaryKey = 'countryID';
 
     use HasFactory;
 
 
     public function cities(){
-        return $this->hasMany(City::class,'city_id','city_id');
+        return $this->hasMany(City::class,'cityID','countryID');
     }
 }

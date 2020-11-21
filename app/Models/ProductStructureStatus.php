@@ -9,7 +9,7 @@ class ProductStructureStatus extends Model
 {
 
     protected $table='urun_yapi_durumu';
-    protected $primaryKey = 'yapi_durumu_id';
+    protected $primaryKey = 'YAPI_DURUMU_ID';
 
     use HasFactory;
 }

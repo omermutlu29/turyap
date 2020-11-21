@@ -87,7 +87,25 @@
                                     <div class="utf-more-search-options-area active">
                                         <div class="utf-more-search-options-area-container">
                                             <div class="row with-forms">
-                                                <div class="col-md-4">
+                                                <div class="col-md-3">
+                                                    <select data-placeholder="ÜLKE" class="chosen-select" style="display: none;" id="country">
+                                                        <option value=""></option>
+                                                        @foreach(\App\Models\Country::all() as $country)
+                                                            <option value="{{$country->country_id}}">{{$country->country_name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <select data-placeholder="İL" name="city" class="chosen-select" style="display: none;" id="city">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <select data-placeholder="İLÇE" name="town" class="chosen-select" style="display: none;" id="town">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
                                                     <select name="category"
                                                             class="utf-chosen-select-single-item">
                                                         <option value="">İlan Tipi</option>
@@ -822,6 +840,30 @@
 
             window.location.href="{{route('product.filter')}}"+'?'+newString;
             return false;
+        });
+        $("#country").change(function () {
+            $.ajax({
+                url: "{{url('get-cities')}}"+"/"+$(this).val(),
+                success: function (result) {
+                    $("#town").html('<option value=""></option>');
+                    $('#town').trigger("chosen:updated");
+                    $("#city").html('<option value=""></option>');
+                    $("#city").append(result);
+                    $('#city').trigger("chosen:updated");
+
+
+                }
+            });
+        });
+        $("#city").change(function () {
+            $.ajax({
+                url: "{{url('get-towns')}}"+"/"+$(this).val(),
+                success: function (result) {
+                    $("#town").html('<option value=""></option>');
+                    $("#town").append(result);
+                    $('#town').trigger("chosen:updated");
+                }
+            });
         });
     });
 </script>

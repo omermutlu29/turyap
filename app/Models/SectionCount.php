@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SectionCount extends Model
 {
-    protected $primaryKey = 'bolumsayisi_id';
+    protected $primaryKey = 'BOLUMSAYISI_ID';
 
 
     protected $table='urun_deger_bolumsayisi';

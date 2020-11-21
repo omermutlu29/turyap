@@ -15,14 +15,14 @@ class AgentController extends Controller
 
     public function show(Request $request)
     {
-        $agent= Agent::where('user_id', $request->id)->with(Agent::relationships())->firstOrFail();
+        $agent= Agent::where('USER_ID', $request->id)->with(Agent::relationships())->firstOrFail();
         $products=$agent->products()->paginate(10);
         return view('agents_profile',compact('agent','products'));
     }
 
     public function products(Request $request)
     {
-        return Agent::where('user_id', $request->id)->with(Agent::relationships())->firstOrFail();
+        return Agent::where('USER_ID', $request->id)->with(Agent::relationships())->firstOrFail();
 
     }
 

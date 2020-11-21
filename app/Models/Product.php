@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use RelationshipsTrait;
-    protected $primaryKey = 'urun_id';
+    protected $primaryKey = 'URUN_ID';
     /**
      * urun_durum_id ?
      */
@@ -18,143 +18,143 @@ class Product extends Model
 
     public function product_type()
     {
-        return $this->belongsTo(ProductType::class, 'cinsi_id', 'cinsi_id');
+        return $this->belongsTo(ProductType::class, 'CINSI_ID', 'CINSI_ID');
     }
 
 
     public function product_type_content()
     {
-        return $this->belongsTo(ProductTypeContent::class, 'tip_id', 'tip_id');
+        return $this->belongsTo(ProductTypeContent::class, 'TIP_ID', 'TIP_ID');
     }
 
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'kategori_id', 'kategori_id');
+        return $this->belongsTo(Category::class, 'KATEGORI_ID', 'KATEGORI_ID');
     }
 
 
     public function currency()
     {
-        return $this->belongsTo(Currency::class, 'para_birimi_id', 'para_birimi_id');
+        return $this->belongsTo(Currency::class, 'PARA_BIRIMI_ID', 'PARA_BIRIMI_ID');
     }
 
 
     public function floor_count()
     {
-        return $this->belongsTo(FloorCount::class, 'bina_kat_sayisi_id', 'katsayisi_id');
+        return $this->belongsTo(FloorCount::class, 'BINA_KAT_SAYISI_ID', 'KATSAYISI_ID');
     }
 
     public function bath_count()
     {
-        return $this->belongsTo(BathCount::class, 'banyo_sayisi_id', 'banyosayisi_id');
+        return $this->belongsTo(BathCount::class, 'BANYO_SAYISI_ID', 'BANYOSAYISI_ID');
     }
 
 
     public function room_count()
     {
-        return $this->belongsTo(RoomCount::class, 'oda_sayisi_id', 'odasayisi_id');
+        return $this->belongsTo(RoomCount::class, 'ODA_SAYISI_ID', 'ODASAYISI_ID');
     }
 
 
     public function section_count()
     {
-        return $this->belongsTo(SectionCount::class, 'isyeri_bolum_sayisi_id', 'bolumsayisi_id');
+        return $this->belongsTo(SectionCount::class, 'ISYERI_BOLUM_SAYISI_ID', 'BOLUMSAYISI_ID');
     }
 
     public function product_usage_status()
     {
-        return $this->belongsTo(ProductUsageStatus::class, 'kullanım_durumu_id', 'kullanım_durumu_id');
+        return $this->belongsTo(ProductUsageStatus::class, 'KULLANIM_DURUMU_ID', 'KULLANIM_DURUMU_ID');
     }
 
     public function product_structure_status()
     {
-        return $this->belongsTo(ProductStructureStatus::class, 'yapi_durumu_id', 'yapi_durumu_id');
+        return $this->belongsTo(ProductStructureStatus::class, 'YAPI_DURUMU_ID', 'YAPI_DURUMU_ID');
     }
 
     public function build_year()
     {
-        return $this->belongsTo(BuildYear::class, 'binanin_yasi_id', 'binanin_yasi_id');
+        return $this->belongsTo(BuildYear::class, 'BINANIN_YASI_ID', 'BINAYASI_ID');
     }
 
     public function heating_type()
     {
-        return $this->belongsTo(HeatingType::class, 'isitma_id', 'isitma_id');
+        return $this->belongsTo(HeatingType::class, 'ISITMA_ID', 'ISITMA_ID');
     }
 
     public function fuel_type()
     {
-        return $this->belongsTo(FuelType::class, 'yakit_tipi_id', 'yakitipi_id');
+        return $this->belongsTo(FuelType::class, 'YAKIT_TIPI_ID', 'YAKITIPI_ID');
     }
 
     public function deed_status()
     {
-        return $this->belongsTo(DeedStatus::class, 'tapu_durumu_id', 'tapudurumu_id');
+        return $this->belongsTo(DeedStatus::class, 'TAPU_DURUMU_ID', 'TAPUDURUMU_ID');
     }
 
     public function current_floor()
     {
-        return $this->belongsTo(CurrentFloor::class, 'bulundugu_kat_id', 'bulundukat_id');
+        return $this->belongsTo(CurrentFloor::class, 'BULUNDUGU_KAT_ID', 'BULUNDUKAT_ID');
     }
 
     public function product_class()
     {
-        return $this->belongsTo(ProductClass::class, 'sinif_id', 'sinif_id');
+        return $this->belongsTo(ProductClass::class, 'SINIF_ID', 'SINIF_ID');
     }
 
     public function balcony_count()
     {
-        return $this->belongsTo(BalconyCount::class, 'balkon_sayisi_id', 'balkonsayisi_id');
+        return $this->belongsTo(BalconyCount::class, 'BALKON_SAYISI_ID', 'BALKONSAYISI_ID');
     }
 
     public function country()
     {
-        return $this->belongsTo(Country::class, 'ulke_id', 'country_id');
+        return $this->belongsTo(Country::class, 'ULKE_ID', 'countryID');
     }
 
     public function city()
     {
-        return $this->belongsTo(City::class, 'il_id', 'city_id');
+        return $this->belongsTo(City::class, 'IL_ID', 'cityID');
     }
 
     public function town()
     {
-        return $this->belongsTo(Town::class, 'ilce_id', 'town_id');
+        return $this->belongsTo(Town::class, 'ILCE_ID', 'townID');
     }
 
     public function deed_type()
     {
-        return $this->belongsTo(ProductDeedType::class, 'arsa_tapu_id', 'arsatapu_id');
+        return $this->belongsTo(ProductDeedType::class, 'ARSA_TAPU_ID', 'ARSATAPU_ID');
     }
 
     public function clearance()
     {
-        return $this->belongsTo(ProductClearance::class, 'gabari_id', 'gabari_id');
+        return $this->belongsTo(ProductClearance::class, 'GABARI_ID', 'GABARI_ID');
     }
 
     public function kaks()
     {
-        return $this->belongsTo(Kaks::class, 'kaks_id', 'kaks_id');
+        return $this->belongsTo(Kaks::class, 'KAKS_ID', 'KAKS_ID');
     }
 
     public function agent()
     {
-        return $this->belongsTo(Agent::class, 'user_id', 'user_id');
+        return $this->belongsTo(Agent::class, 'USER_ID', 'USER_ID');
     }
 
     public function agency()
     {
-        return $this->belongsTo(Agency::class, 'sirket_id', 'sirket_id');
+        return $this->belongsTo(Agency::class, 'SIRKET_ID', 'SIRKET_ID');
     }
 
     public function images()
     {
-        return $this->hasMany(ProductImage::class, 'urun_id', 'urun_id');
+        return $this->hasMany(ProductImage::class, 'URUN_ID', 'URUN_ID');
     }
 
     public function product_fields()
     {
-        return $this->hasOne(ProductField::class, 'kayit_id', 'urun_id');
+        return $this->hasOne(ProductField::class, 'KAYIT_ID', 'URUN_ID');
     }
 
 

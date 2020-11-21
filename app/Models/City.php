@@ -8,31 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     protected $table='cities';
-    protected $primaryKey = 'city_id';
+    protected $primaryKey = 'cityID';
 
     use HasFactory;
 
 
-    public function __get($name)
-    {
-        if ($name == "city_id") {
-            $name = "city_id";
-        }
-
-        if ($name == "country_id") {
-            $name = "country_id";
-        }
-
-        return parent::__get($name);
-
-    }
-
-
     public function country(){
-        return $this->belongsTo(Country::class,'country_id','country_id');
+        return $this->belongsTo(Country::class,'countryID','countryID');
     }
 
     public function towns(){
-        return $this->belongsTo(Town::class,'city_id','city_id');
+        return $this->belongsTo(Town::class,'cityID','cityID');
     }
 }

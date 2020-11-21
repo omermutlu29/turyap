@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class BuildYear extends Model
 {
     protected $table='urun_deger_binayasi';
-    protected $primaryKey = 'binayasi_ids';
+    protected $primaryKey = 'BINAYASI_ID';
 
     use HasFactory;
 }

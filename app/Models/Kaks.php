@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kaks extends Model
 {
-    protected $primaryKey = 'kaks_id';
+    protected $primaryKey = 'KAKS_ID';
 
     protected $table='urun_deger_kaks';
     use HasFactory;

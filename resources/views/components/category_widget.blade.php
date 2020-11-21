@@ -3,11 +3,9 @@
         <h3>Emlak Kategorisi</h3>
         <div class="utf-sidebar-categorie">
             <ul>
-                <li><a href="#">Apartman</a><span>10 Emlak</span></li>
-                <li><a href="#">Apartman dairesi</a><span>14 Emlak</span></li>
-                <li><a href="#">Aile Evi</a><span>18 Emlak</span></li>
-                <li><a href="#">Modern Villa</a><span>12 Emlak</span></li>
-                <li><a href="#">Town House</a><span>10 Emlak</span></li>
+                @foreach(\App\Models\Category::all() as $category)
+                <li><a href="{{route('product.filter',['category'=>$category->KATEGORI_ID])}}">{{$category->KATEGORI}}</a></li>
+                @endforeach
             </ul>
         </div>
     </div>

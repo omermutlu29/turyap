@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Currency extends Model
 {
-    protected $primaryKey = 'para_birimi_id';
+    protected $primaryKey = 'PARA_BIRIMI_ID';
 
     protected $table='para_birimi';
     use HasFactory;

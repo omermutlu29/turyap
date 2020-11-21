@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FuelType extends Model
 {
-    protected $primaryKey = 'yakitipi_id';
+    protected $primaryKey = 'YAKITIPI_ID';
 
     protected $table='urun_deger_yakittipi';
     use HasFactory;

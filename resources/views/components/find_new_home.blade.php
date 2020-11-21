@@ -1,4 +1,4 @@
-<form method="GET" action="{{route('product.filter')}}">
+<form method="GET" action="{{route('product.filter')}}" id="form">
 <div class="widget utf-sidebar-widget-item">
     <div class="utf-boxed-list-headline-item">
         <h3>Yeni Ev Bul</h3>
@@ -61,10 +61,10 @@
     <!-- Row -->
     <div class="row with-forms">
         <div class="col-md-12">
-            <select data-placeholder="ÜLKE" class="chosen-select" style="display: none;" id="country">
+            <select data-placeholder="ÜLKE" name="country" class="chosen-select" style="display: none;" id="country">
                 <option value=""></option>
                 @foreach(\App\Models\Country::all() as $country)
-                    <option value="{{$country->country_id}}">{{$country->country_name}}</option>
+                    <option value="{{$country->countryID}}">{{$country->countryName}}</option>
                 @endforeach
             </select>
         </div>
@@ -74,7 +74,14 @@
     <!-- Row -->
     <div class="row with-forms">
         <div class="col-md-12">
-            <select data-placeholder="İL" class="chosen-select" style="display: none;" id="city">
+            <select data-placeholder="İL" name="city" class="chosen-select" style="display: none;" id="city">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="row with-forms">
+        <div class="col-md-12">
+            <select data-placeholder="İLÇE" name="town" class="chosen-select" style="display: none;" id="town">
                 <option value=""></option>
             </select>
         </div>
@@ -96,29 +103,9 @@
         <div class="clearfix"></div>
     </div>
 
-    <!-- More Search Options -->
-    <a href="#" class="utf-utf-more-search-options-area-button margin-bottom-10 margin-top-20" data-open-title="Daha Fazla" data-close-title="Daha Az"></a>
-    <div class="utf-more-search-options-area relative">
-        <div class="checkboxes one-in-row margin-bottom-10">
-            <input id="check-2" type="checkbox" name="check">
-            <label for="check-2">Air Conditioning</label>
-            <input id="check-3" type="checkbox" name="check">
-            <label for="check-3">Swimming Pool</label>
-            <input id="check-4" type="checkbox" name="check">
-            <label for="check-4">Central Heating</label>
-            <input id="check-5" type="checkbox" name="check">
-            <label for="check-5">Laundry Room</label>
-            <input id="check-6" type="checkbox" name="check">
-            <label for="check-6">Gym</label>
-            <input id="check-7" type="checkbox" name="check">
-            <label for="check-7">Alarm</label>
-            <input id="check-8" type="checkbox" name="check">
-            <label for="check-8">Window Covering</label>
-        </div>
-        <!-- Checkboxes / End -->
-    </div>
-    <!-- More Search Options / End -->
-    <button class="button fullwidth margin-top-10">Arama</button>
+
+
+    <button class="button fullwidth margin-top-20">Arama</button>
 </div>
 </form>
 

@@ -4,14 +4,14 @@
             <!-- Titlebar -->
             <div id="titlebar-dtl-item" class="property-titlebar margin-bottom-20">
                 <div class="property-title">
-                    <div class="property-pricing">{{$product->currency->para}} {{str_replace(',','.',number_format($product->fiyat))}}</div>
-                    <h2>{{$product->tanim}}<span class="property-badge-sale">{{$product->category->kategori}}</span></h2>
-                    @if($product->lat && $product->lot)<span class="utf-listing-address"><i class="icon-material-outline-location-on"></i><a href="https://www.google.com/maps/search/?api=1&query={{$product->lat}},{{$product->lot}}" target="_blank"> Lokasyon </a></span>@endif
+                    <div class="property-pricing">{{$product->currency->PARA}} {{str_replace(',','.',number_format($product->FIYAT))}}</div>
+                    <h2>{{$product->TANIM}}<span class="property-badge-sale">{{$product->category->KATEGORI}}</span></h2>
+                    @if($product->LAT && $product->LOT)<span class="utf-listing-address"><i class="icon-material-outline-location-on"></i><a href="https://www.google.com/maps/search/?api=1&query={{$product->LAT}},{{$product->LOT}}" target="_blank"> Lokasyon </a></span>@endif
                     <ul class="property-main-features">
-                        <li>Kat : <span>{{$product->current_floor->deger??'-'}}</span></li>
-                        <li>Banyo Sayısı :<span>{{$product->bath_count->deger ?? '1'}}</span></li>
-                        <li>BRÜT <span>{{$product->alan}}</span> m<sup>2</sup></li>
-                        <li>NET <span>{{$product->alan_net}}</span> m<sup>2</sup></li>
+                        <li>Kat : <span>{{$product->current_floor->DEGER??'-'}}</span></li>
+                        <li>Banyo Sayısı :<span>{{$product->bath_count->DEGER ?? '1'}}</span></li>
+                        <li>BRÜT <span>{{$product->ALAN}}</span> m<sup>2</sup></li>
+                        <li>NET <span>{{$product->ALAN_NET}}</span> m<sup>2</sup></li>
                     </ul>
                 </div>
             </div>

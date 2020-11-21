@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductClearance extends Model
 {
     protected $table='urun_deger_gabari';
-    protected $primaryKey = 'gabari_id';
+    protected $primaryKey = 'GABARI_ID';
 
     use HasFactory;
 }

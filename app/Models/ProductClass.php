@@ -9,7 +9,7 @@ class ProductClass extends Model
 {
 
     protected $table='urun_sinif';
-    protected $primaryKey = 'sinif_id';
+    protected $primaryKey = 'SINIF_ID';
 
     use HasFactory;
 }

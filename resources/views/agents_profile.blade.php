@@ -5,13 +5,16 @@
         <div class="row">
             <div class="col-md-12">
                 <!-- Agency -->
-                <div class="agent agents-profile agency margin-bottom-40"> <a href="{{route('agent.show',$agent->user_id)}}" class="utf-agent-avatar"> <img src="{{asset('images/agency-01.jpg')}}" alt=""> </a>
+                <div class="agent agents-profile agency margin-bottom-40"><a
+                        href="{{route('agent.show',$agent->USER_ID)}}" class="utf-agent-avatar"> <img
+                            src="{{asset('images/agency-01.jpg')}}" alt=""> </a>
                     <div class="utf-agent-content">
                         <div class="utf-agent-name">
-                            <h4><a href="agency-profile.html">{{$agent->adi}} {{$agent->soyadi}} {{$agent->gsm}}</a></h4>
+                            <h4><a href="agency-profile.html">{{$agent->ADI}} {{$agent->SOYADI}} {{$agent->GSM}}</a>
+                            </h4>
                             <ul class="utf-agent-contact-details">
-                                <li><i class="icon-feather-smartphone"></i>{{$agent->gsm}}</li>
-                                <li><i class="icon-material-outline-email"></i><a href="#">{{$agent->email}}</a></li>
+                                <li><i class="icon-feather-smartphone"></i>{{$agent->GSM}}</li>
+                                <li><i class="icon-material-outline-email"></i><a href="#">{{$agent->EMAIL}}</a></li>
                             </ul>
                             <ul class="utf-social-icons">
                                 <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
@@ -41,7 +44,7 @@
                     <div class="sort-by">
                         <label>Şuna Göre Sırala:</label>
                         <div class="sort-by-select">
-                            <select data-placeholder="Seçin" class="utf-chosen-select-single-item" >
+                            <select data-placeholder="Seçin" class="utf-chosen-select-single-item">
                                 <option value="">Seçin</option>
                                 <option value="price_asc">Fiyata Göre Artan</option>
                                 <option value="price_desc">Fiyata Göre Azalan</option>
@@ -59,15 +62,15 @@
                 <!-- Listings -->
                 <div class="utf-listings-container-area list-layout">
                     <!-- Listing Item  İLANLAR-->
-                    @foreach($agent->products as $product)
-                        @include('components.utf_list_item_ad',['product'=>$product])
-                    @endforeach
-                    <!-- Listing Item / End -->
+                @foreach($products as $product)
+                    @include('components.utf_list_item_ad',['product'=>$product])
+                @endforeach
+                <!-- Listing Item / End -->
                 </div>
                 <!-- Listings Container / End -->
 
                 <!-- Pagination -->
-                {{$products->onEachSide(5)->withQueryString()->links('vendor.pagination.turyap-links')}}
+            {{$products->onEachSide(5)->withQueryString()->links('vendor.pagination.turyap-links')}}
 
             <!-- Pagination / End -->
             </div>
@@ -83,15 +86,62 @@
                     </div>
                     <!-- Widget / End-->
                     <!-- Widget -->
-                    @include('components.find_new_home')
-                    <!-- Widget / End -->
-                    <!-- Widget -->
-                    @include('components.featured_props')
-                    <!-- Widget / End -->
+                @include('components.find_new_home')
+                <!-- Widget / End -->
+
+                <!-- Widget / End -->
                 </div>
             </div>
             <!-- Sidebar / End -->
         </div>
     </div>
+@endsection
+@section('extra_script')
+    <script>
+        $("#form").submit(function () {
+            var qstring = ($("#form").serialize());
+            var strings = [];
+            qstring = qstring.split('&');
+            for (var i = 0; i < qstring.length; i++) {
+                var a = qstring[i].split('=');
+                if (a[1] != "") {
+                    strings.push(qstring[i]);
+                }
+            }
+            var newString = '';
+            for (var i = 0; i < strings.length; i++) {
+                newString += strings[i] + '&'
+            }
+            newString = (newString.slice(0, -1));
+
+            window.location.href = "{{route('product.filter')}}" + '?' + newString;
+            return false;
+        });
+        $("#country").change(function () {
+            $.ajax({
+                url: "{{url('get-cities')}}" + "/" + $(this).val(),
+                success: function (result) {
+                    $("#town").html('<option value=""></option>');
+                    $('#town').trigger("chosen:updated");
+                    $("#city").html('<option value=""></option>');
+                    $("#city").append(result);
+                    $('#city').trigger("chosen:updated");
+
+
+                }
+            });
+        });
+        $("#city").change(function () {
+            $.ajax({
+                url: "{{url('get-towns')}}" + "/" + $(this).val(),
+                success: function (result) {
+                    $("#town").html('<option value=""></option>');
+                    $("#town").append(result);
+                    $('#town').trigger("chosen:updated");
+                }
+            });
+        });
+
+    </script>
 @endsection
 

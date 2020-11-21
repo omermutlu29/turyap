@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Town extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'town_id';
+    protected $primaryKey = 'TOWN_ID';
 
 }

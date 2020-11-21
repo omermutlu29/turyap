@@ -9,7 +9,7 @@ class ProductUsageStatus extends Model
 {
 
     protected $table='urun_kullanim_durumu';
-    protected $primaryKey = 'kullanim_durumu_id';
+    protected $primaryKey = 'KULLANIM_DURUMU_ID';
 
     use HasFactory;
 }

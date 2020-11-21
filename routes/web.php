@@ -45,3 +45,6 @@ Route::get('/contact',[\App\Http\Controllers\PageController::class,'contact'])->
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('get-cities/{country}',[\App\Http\Controllers\LocationController::class,'getCities']);
+Route::get('get-towns/{city}',[\App\Http\Controllers\LocationController::class,'getTowns']);

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AgentSection extends Model
 {
     protected $table='user_bolum';
-    protected $primaryKey = 'user_bolum_id';
+    protected $primaryKey = 'USER_BOLUM_ID';
 
     use HasFactory;
 }

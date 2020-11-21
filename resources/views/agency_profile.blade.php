@@ -5,17 +5,17 @@
         <div class="row">
             <div class="col-md-12">
                 <!-- Agency -->
-                <div class="agent agents-profile agency"><a href="{{route('agency.show',$agency->sirket_id)}}"
+                <div class="agent agents-profile agency"><a href="{{route('agency.show',$agency->SIRKET_ID)}}"
                                                             class="utf-agent-avatar"> <img
                             src="{{asset('images/agency-01.jpg')}}" alt=""> </a>
                     <div class="utf-agent-content">
                         <div class="utf-agent-name">
-                            <h4><a href="{{route('agency.show',$agency->sirket_id)}}">{{$agency->sirket_id}}</a></h4>
+                            <h4><a href="{{route('agency.show',$agency->SIRKET_ID)}}">{{$agency->SIRKET_ID}}</a></h4>
                             <ul class="utf-agent-contact-details">
-                                <li><i class="icon-material-outline-business"></i>{{$agency->country->country_name}}
+                                <li><i class="icon-material-outline-business"></i>{{$agency->country->countryName}}
                                     /{{$agency->city->city}}</li>
-                                <li><i class="icon-feather-smartphone"></i>{{$agency->telefon}}</li>
-                                <li><i class="icon-material-outline-email"></i><a href="#">{{$agency->email ?? '-'}}</a>
+                                <li><i class="icon-feather-smartphone"></i>{{$agency->TELEFON}}</li>
+                                <li><i class="icon-material-outline-email"></i><a href="#">{{$agency->EMAIL ?? '-'}}</a>
                                 </li>
                             </ul>
                             <ul class="utf-social-icons">
@@ -27,7 +27,7 @@
                             </ul>
                         </div>
                         <div class="clearfix"></div>
-                        <p>{{$agency->adres_satiri}}</p>
+                        <p>{{$agency->ADRES_SATIRI}}</p>
                     </div>
                 </div>
             </div>

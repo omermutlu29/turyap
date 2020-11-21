@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductImage extends Model
 {
     protected $table='urun_resim';
-    protected $primaryKey = 'urun_id';
+    protected $primaryKey = 'URUN_ID';
 
     use HasFactory;
 }

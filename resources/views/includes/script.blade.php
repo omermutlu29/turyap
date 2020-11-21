@@ -9,10 +9,5 @@
 <script src="{{asset('/scripts/mmenu.min.js')}}"></script>
 <script src="{{asset('/scripts/tooltips.min.js')}}"></script>
 <script src="{{asset('/scripts/custom_jquery.js')}}"></script>
-<script>
-    $(document).ready(function () {
-        ($("#country").change(function () {
-        }));
-    });
-</script>
+
 @yield('extra_script')

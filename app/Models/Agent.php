@@ -9,16 +9,16 @@ use Illuminate\Database\Eloquent\Model;
 class Agent extends Model
 {
     use RelationshipsTrait;
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'USER_ID';
 
     protected $table='kullanicilar';
     use HasFactory;
 
     public function agency(){
-        return $this->belongsTo(Agency::class,'sirket_id','sirket_id');
+        return $this->belongsTo(Agency::class,'SIRKET_ID','SIRKET_ID');
     }
 
     public function products(){
-        return $this->hasMany(Product::class,'user_id','user_id');
+        return $this->hasMany(Product::class,'USER_ID','USER_ID');
     }
 }

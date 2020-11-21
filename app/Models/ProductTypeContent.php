@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ProductTypeContent extends Model
 {
     protected $table='urun_cinsi_tipi';
-    protected $primaryKey = 'tip_id';
+    protected $primaryKey = 'TIP_ID';
 
     use HasFactory;
 
     public function product_type(){
-        return $this->belongsTo(ProductType::class,'cinsi_id','cinsi_id');
+        return $this->belongsTo(ProductType::class,'CINSI_ID','CINSI_ID');
     }
 }

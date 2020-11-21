@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FloorCount extends Model
 {
-    protected $primaryKey = 'katsayisi_id';
+    protected $primaryKey = 'KATSAYISI_ID';
 
     protected $table='urun_deger_binakatsayisi';
     use HasFactory;

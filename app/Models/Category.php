@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $table='urun_kategori';
-    protected $primaryKey = 'kategori_id';
+    protected $primaryKey = 'KATEGORI_ID';
 
     use HasFactory;
 }

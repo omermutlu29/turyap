@@ -13,7 +13,7 @@
                         <h3><i class="icon-material-outline-description"></i>  Emlak Tanımı</h3>
                     </div>
                     <div class="show-more">
-                        {!! $product->tanim_aciklama !!}
+                        {!! $product->TANIM_ACIKLAMA !!}
                         <a href="#" class="show-more-button">Devamı <i class="sl sl-icon-plus"></i></a>
                     </div>
 
@@ -22,15 +22,15 @@
                         <h3><i class="sl sl-icon-briefcase"></i> İlan Detayları</h3>
                     </div>
                     <ul class="property-features margin-top-0">
-                        @if(isset($product->urun_id))<li>Emlak No: <span>{{$product->urun_id}}</span></li>@endif
-                        @if(isset($product->fiyat) && $product->fiyat > 0)<li>Fiyat: <span>{{$product->currency->para}} {{str_replace(',','.',number_format($product->fiyat))}}</span></li>@endif
-                        @if(isset($product->alan) && $product->alan > 0)<li>Emlak Boyutu: <span>{{$product->alan}} m2</span></li>@endif
-                        @if(isset($product->build_year->deger))<li>Bina Yaşı: <span>{{$product->build_year->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->room_count->deger))<li>Oda Sayısı: <span>{{$product->room_count->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->bath_count->deger))<li>Banyo: <span>{{$product->bath_count->deger ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->URUN_ID))<li>Emlak No: <span>{{$product->urun_id}}</span></li>@endif
+                        @if(isset($product->FIYAT) && $product->FIYAT > 0)<li>Fiyat: <span>{{$product->currency->PARA}} {{str_replace(',','.',number_format($product->FIYAT))}}</span></li>@endif
+                        @if(isset($product->ALAN) && $product->ALAN > 0)<li>Emlak Boyutu: <span>{{$product->ALAN}} m2</span></li>@endif
+                        @if(isset($product->build_year->DEGER))<li>Bina Yaşı: <span>{{$product->build_year->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->room_count->DEGER))<li>Oda Sayısı: <span>{{$product->room_count->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->bath_count->DEGER))<li>Banyo: <span>{{$product->bath_count->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
                         @if(isset($product->product_fields->KAPALIGARAJ))<li>Garaj: <span>{{$product->product_fields->KAPALIGARAJ ? 'Var' : 'Yok'}}</span></li>@endif
-                        @if(isset($product->product_type->cinsi))<li>Emlak Tipi: <span>{{$product->product_type->cinsi}}</span></li>@endif
-                        @if(isset($product->category->kategori))<li>Emlak Durumu <span>{{$product->category->kategori}}</span></li>@endif
+                        @if(isset($product->product_type->CINSI))<li>Emlak Tipi: <span>{{$product->product_type->CINSI}}</span></li>@endif
+                        @if(isset($product->category->KATEGORI))<li>Emlak Durumu <span>{{$product->category->KATEGORI}}</span></li>@endif
                     </ul>
 
                     <!-- Details -->
@@ -38,20 +38,20 @@
                         <h3><i class="icon-material-outline-business"></i> Ek Detaylar</h3>
                     </div>
                     <ul class="property-features margin-top-0">
-                        @if(isset($product->fiyat_depozit) && $product->fiyat_depozit != 0)<li>Depozito: <span>{{$product->currency->para}} {{$product->fiyat_depozit ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->fiyat_aidat) && $product->fiyat_aidat != 0)<li>Aidat: <span>{{$product->currency->para}} {{$product->fiyat_aidat ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->heating_type->deger))<li>Isıtma: <span>{{$product->heating_type->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->fuel_type->deger))<li>Yakıt Tipi: <span>{{$product->fuel_type->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->balcony_count->deger))<li>Balkon Sayısı: <span>{{$product->balcony_count->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->deed_status->deger))<li>Tapu Durumu: <span>{{$product->deed_status->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->kaks->deger))<li>KAKS: <span>{{$product->kaks->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->clearance->deger))<li>Gabari: <span>{{$product->clearance->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->product_type_content->tip))<li>Ürün Sınıfı: <span>{{$product->product_type_content->tip ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->floor_count->deger))<li>Bina Kat Sayısı: <span>{{$product->floor_count->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->current_floor->deger))<li>Bulunduğu Kat: <span>{{$product->current_floor->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->product_structure_status->yapi_durumu))<li>Yapı Durumu: <span>{{$product->product_structure_status->yapi_durumu ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->deed_type->deger))<li>Tapu Tipi: <span>{{$product->deed_type->deger ?? 'Belirtilmemiş'}}</span></li>@endif
-                        @if(isset($product->product_status->deger))<li>Tapu Tipi: <span>{{$product->deed_type->deger ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->FIYAT_DEPOZIT) && $product->FIYAT_DEPOZIT != 0)<li>Depozito: <span>{{$product->currency->PARA}} {{$product->FIYAT_DEPOZIT ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->FIYAT_AIDAT) && $product->FIYAT_AIDAT != 0)<li>Aidat: <span>{{$product->currency->PARA}} {{$product->FIYAT_AIDAT ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->heating_type->DEGER))<li>Isıtma: <span>{{$product->heating_type->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->fuel_type->DEGER))<li>Yakıt Tipi: <span>{{$product->fuel_type->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->balcony_count->DEGER))<li>Balkon Sayısı: <span>{{$product->balcony_count->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->deed_status->DEGER))<li>Tapu Durumu: <span>{{$product->deed_status->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->kaks->DEGER))<li>KAKS: <span>{{$product->kaks->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->clearance->DEGER))<li>Gabari: <span>{{$product->clearance->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->product_type_content->TIP))<li>Ürün Sınıfı: <span>{{$product->product_type_content->TIP ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->floor_count->DEGER))<li>Bina Kat Sayısı: <span>{{$product->floor_count->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->current_floor->DEGER))<li>Bulunduğu Kat: <span>{{$product->current_floor->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->product_structure_status->YAPI_DURUMU))<li>Yapı Durumu: <span>{{$product->product_structure_status->YAPI_DURUMU ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->deed_type->DEGER))<li>Tapu Tipi: <span>{{$product->deed_type->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
+                        @if(isset($product->product_status->DEGER))<li>Tapu Tipi: <span>{{$product->deed_type->DEGER ?? 'Belirtilmemiş'}}</span></li>@endif
                     </ul>
 
                     <!-- Features -->
@@ -141,4 +141,49 @@
     <script src="{{asset('scripts/infobox.min.js')}}"></script>
     <script src="{{asset('scripts/markerclusterer.js')}}"></script>
     <script src="{{asset('scripts/maps.js')}}"></script>
+    <script>
+        $("#form").submit(function () {
+            var qstring = ($("#form").serialize());
+            var strings = [];
+            qstring = qstring.split('&');
+            for (var i = 0; i < qstring.length; i++) {
+                var a = qstring[i].split('=');
+                if (a[1] != "") {
+                    strings.push(qstring[i]);
+                }
+            }
+            var newString='';
+            for(var i=0;i < strings.length; i++){
+                newString+=strings[i]+'&'
+            }
+            newString=(newString.slice(0,-1));
+
+            window.location.href="{{route('product.filter')}}"+'?'+newString;
+            return false;
+        });
+        $("#country").change(function () {
+            $.ajax({
+                url: "{{url('get-cities')}}"+"/"+$(this).val(),
+                success: function (result) {
+                    $("#town").html('<option value=""></option>');
+                    $('#town').trigger("chosen:updated");
+                    $("#city").html('<option value=""></option>');
+                    $("#city").append(result);
+                    $('#city').trigger("chosen:updated");
+
+
+                }
+            });
+        });
+        $("#city").change(function () {
+            $.ajax({
+                url: "{{url('get-towns')}}"+"/"+$(this).val(),
+                success: function (result) {
+                    $("#town").html('<option value=""></option>');
+                    $("#town").append(result);
+                    $('#town').trigger("chosen:updated");
+                }
+            });
+        });
+    </script>
 @endsection

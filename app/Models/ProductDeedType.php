@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductDeedType extends Model
 {
     protected $table='urun_deger_arsatapu';
-    protected $primaryKey = 'arsatapu_id';
+    protected $primaryKey = 'ARSATAPU_ID';
 
     use HasFactory;
 }
