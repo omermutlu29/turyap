@@ -9,6 +9,7 @@ class ProductController extends Controller
 {
     public function filter(Request $request)
     {
+        $title='İlanlar';
         $query = Product::query();
 
         if ($request->has('search_text') && $request->search_text != "") {
@@ -60,21 +61,24 @@ class ProductController extends Controller
 
         $products = ($query->paginate(10));
 
-        return view('list', compact('products'));
+        return view('list', compact('products','title'));
 
 
     }
 
     public function index()
     {
+        $title='İlanlar';
         $relationships = Product::relationships();
         $products = (Product::with($relationships)->paginate(10));
-        return view('list', compact('products'));
+        return view('list', compact('products','title'));
     }
 
     public function show(Request $request)
     {
+        $title='İlan Detay';
         $product = Product::where('URUN_ID', $request->id)->with(Product::relationships())->firstOrFail();
+
         $arr = ($product->product_fields()->first());
         $fields = $arr->getAttributes();
 
@@ -86,6 +90,6 @@ class ProductController extends Controller
                 unset($fields[$key]);
             }
         }
-        return view('detail', compact('product', 'fields'));
+        return view('detail', compact('product', 'fields','title'));
     }
 }

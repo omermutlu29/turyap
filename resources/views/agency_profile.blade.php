@@ -105,41 +105,25 @@
             <!-- Sidebar -->
             <div class="col-lg-4 col-md-4">
                 <div class="sidebar">
-                    <div class="widget utf-sidebar-widget-item">
-                        <div class="utf-detail-banner-add-section">
-                            <a href="#"><img src="{{asset('images/banner-add-2.jpg')}}" alt="banner-add-2"></a>
-                        </div>
-                    </div>
+
 
                     <div class="utf-sidebar-widget-item">
                         <div class="utf-boxed-list-headline-item">
-                            <h3>Contact Us</h3>
+                            <h3>İletişim</h3>
                         </div>
                         <div class="widget">
                             <div class="agefnt-widget">
-                                <input type="text" placeholder="Name">
-                                <input type="text" placeholder="Email">
-                                <input type="text" placeholder="Phone">
-                                <textarea>Message...</textarea>
-                                <button class="button fullwidth margin-top-5">Send Message</button>
+                                <input type="text" placeholder="Ad">
+                                <input type="text" placeholder="E-posta">
+                                <input type="text" placeholder="Telefon">
+                                <textarea>Mesajınız</textarea>
+                                <button class="button fullwidth margin-top-5">Mesaj Gönder</button>
                             </div>
                         </div>
                     </div>
                     <!-- Widget / End -->
 
-                    <!-- Widget -->
-                    <div class="utf-sidebar-widget-item">
-                        <div class="utf-boxed-list-headline-item">
-                            <h3>Our Location</h3>
-                        </div>
-                        <div class="widget">
-                            <div id="propertyMap-container" class="agency-map">
-                                <div id="propertyMap" data-latitude="48.8566" data-longitude="2.3522"
-                                     data-map-icon="im im-icon-Hamburger"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Widget / End -->
+
 
                 </div>
             </div>

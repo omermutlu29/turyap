@@ -13,15 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',function () {
-    return view('index');
-})->name('index');
+Route::get('/',[\App\Http\Controllers\PageController::class,'index'])->name('index');
 
 Route::prefix('agency')->group(function () {
     Route::get('list',[\App\Http\Controllers\AgencyController::class,'index'])->name('agency.list');
     Route::get('show/{id}',[\App\Http\Controllers\AgencyController::class,'show'])->name('agency.show');
-    Route::get('show/{id}/products',[\App\Http\Controllers\AgencyController::class,'products'])->name('agency.products');
-    Route::get('show/{id}/agents',[\App\Http\Controllers\AgencyController::class,'agents'])->name('agency.agents');
 });
 
 Route::prefix('agent')->group(function () {
@@ -36,8 +32,8 @@ Route::prefix('product')->group(function () {
     Route::get('show/{id}',[\App\Http\Controllers\ProductController::class,'show'])->name('product.show');
 });
 
-Route::get('/about',[\App\Http\Controllers\PageController::class,'about'])->name('about');
 Route::get('/contact',[\App\Http\Controllers\PageController::class,'contact'])->name('contact');
+Route::get('/page/{page}',[\App\Http\Controllers\PageController::class,'page'])->name('page');
 
 
 
@@ -48,3 +44,5 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('get-cities/{country}',[\App\Http\Controllers\LocationController::class,'getCities']);
 Route::get('get-towns/{city}',[\App\Http\Controllers\LocationController::class,'getTowns']);
+Route::get('franchise',[\App\Http\Controllers\PageController::class,'franchise'])->name('franchise');
+Route::post('franchise-post',[\App\Http\Controllers\PageController::class,'franchise_post'])->name('franchise.post');

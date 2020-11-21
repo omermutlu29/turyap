@@ -4,12 +4,14 @@
         <div class="row">
             @foreach($agencies as $agency)
                 <div class="col-md-6">
-                    <div class="agent agents-profile agency" style="min-height: 300px"><a href="{{route('agency.show',$agency->SIRKET_ID)}}"
-                                                                class="utf-agent-avatar"> <img
+                    <div class="agent agents-profile agency" style="min-height: 300px"><a
+                            href="{{route('agency.show',$agency->SIRKET_ID)}}"
+                            class="utf-agent-avatar"> <img
                                 src="{{asset('images/agency-01.jpg')}}" alt=""> </a>
                         <div class="utf-agent-content">
                             <div class="utf-agent-name">
-                                <h4><a href="{{route('agency.show',$agency->SIRKET_ID)}}">{{$agency->SIRKET_ADI}}</a></h4>
+                                <h4><a href="{{route('agency.show',$agency->SIRKET_ID)}}">{{$agency->SIRKET_ADI}}</a>
+                                </h4>
                                 <ul class="utf-agent-contact-details">
                                     <li>
                                         <i class="icon-material-outline-business"></i>{{$agency->city->city ?? ''}}</li>
@@ -32,6 +34,15 @@
                 </div>
             @endforeach
 
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="clearfix"></div>
+                <!-- Pagination -->
+                        {{$agencies->onEachSide(5)->withQueryString()->links('vendor.pagination.turyap-links')}}
+
+            <!-- Pagination / End -->
+            </div>
         </div>
     </div>
 @endsection

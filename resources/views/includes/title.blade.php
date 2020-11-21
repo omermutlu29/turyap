@@ -1,1 +1,1 @@
-<title>Turyap</title>
+<title>Turyap  {{$title ? '| ' . $title : ''}}</title>

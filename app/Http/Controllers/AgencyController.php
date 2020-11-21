@@ -10,24 +10,18 @@ class AgencyController extends Controller
 {
     public function index()
     {
-        $agencies= Agency::with('city','country','town')->limit(10)->get();
-        return view('agency_list',compact('agencies'));
+        $title='Ofislerimiz';
+        $agencies= Agency::with('city','country','town')->paginate(10);
+        return view('agency_list',compact('agencies','title'));
     }
 
     public function show(Request $request)
     {
+        $title='Ofis Bilgileri';
         $agency= Agency::where('SIRKET_ID', $request->id)->with('agents','city','country','town')->firstOrFail();
         $products=Product::where('SIRKET_ID',$request->id)->with(Product::relationships())->paginate(10);
-        return view('agency_profile',compact('agency','products'));
+        return view('agency_profile',compact('agency','products','title'));
     }
 
-    public function products(Request $request)
-    {
-        return Agency::where('SIRKET_ID', $request->id)->with('products')->firstOrFail();
-    }
 
-    public function agents(Request $request)
-    {
-        return Agency::where('SIRKET_ID', $request->id)->with('agents')->firstOrFail();
-    }
 }

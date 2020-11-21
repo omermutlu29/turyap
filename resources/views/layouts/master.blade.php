@@ -12,7 +12,7 @@
     @include('includes.header')
     <div class="clearfix"></div>
     <!-- Titlebar -->
-    @include('includes.breadcrumb')
+    @include('includes.breadcrumb',['title'=>$title ? $title : ''])
     <!-- Content -->
         @yield('content')
     <!-- Footer -->
