@@ -41,7 +41,7 @@ Route::get('/page/{page}',[\App\Http\Controllers\PageController::class,'page'])-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
+Route::get('get-search-fields',[\App\Http\Controllers\LocationController::class,'getSearchFields']);
 Route::get('get-cities/{country}',[\App\Http\Controllers\LocationController::class,'getCities']);
 Route::get('get-towns/{city}',[\App\Http\Controllers\LocationController::class,'getTowns']);
 Route::get('franchise',[\App\Http\Controllers\PageController::class,'franchise'])->name('franchise');

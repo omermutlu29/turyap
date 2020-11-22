@@ -22,4 +22,6 @@ class AgentController extends Controller
         return view('agents_profile', compact('agent', 'products', 'title'));
     }
 
+
+
 }

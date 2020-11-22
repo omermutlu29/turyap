@@ -17,6 +17,7 @@
                         <li><a href="{{route('contact')}}">İLETİŞİM</a></li>
                         <li><a href="{{route('franchise')}}">FRANCHISE</a></li>
                         <li><a href="{{route('page',['page'=>'muzayede'])}}">MÜZAYEDE</a></li>
+                        <li><a href="{{route('page',['page'=>'turyap-global'])}}">TURYAP GLOBAL</a></li>
                         <li><a href="{{route('page',['page'=>'turyap-global'])}}">TURYAPNET</a></li>
                     </ul>
                 </nav>
@@ -24,9 +25,8 @@
             </div>
             <div class="right-side">
                 <ul class="right-menu hidden-xs hidden-sm">
-                    <li><a href="{{route('page',['page'=>'franchise'])}}">FRANCHISE</a></li>
+                    <li><a href="{{url('franchise')}}">FRANCHISE</a></li>
                     <li><a href="{{route('page',['page'=>'muzayede'])}}">TURYAPNET</a></li>
-                    <li><a href="{{route('page',['page'=>'turyap-global'])}}">TURYAP GLOBAL</a></li>
                 </ul>
                 <div class="header-widget">
                     <div class="mmenu-trigger">

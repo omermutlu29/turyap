@@ -28,4 +28,6 @@ class LocationController extends Controller
         }
         return $str;
     }
+
+
 }

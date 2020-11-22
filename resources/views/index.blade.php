@@ -55,17 +55,17 @@
                     <div class="col-md-12">
                         <div class="utf-main-search-container-area">
                             <div class="utf-banner-headline-text-part">
-                                <h2>Ara <span class="typed-words">Dream</span><span class="typed-cursor">|</span></h2>
-                                <span>Deneyimli Turyap uzmanlarının size sunmak istediği yüzlerce portföy var.</span>
+                                <h2>{{\App\Models\HomePageBanner::orderBy('created_at','DESC')->first()->title ?? ''}}</h2>
+                                <span>{{\App\Models\HomePageBanner::orderBy('created_at','DESC')->first()->description ?? ''}}</span>
                             </div>
                             <form method="get" action="{{route('product.filter')}}" id="form"
                                   class="utf-main-search-form-item">
                                 <div class="utf-search-type-block-area">
-                                    <div class="search-type" style="text-align: center">
-                                        <label style="display: none;" class="active">
-                                            <input class="first-tab" checked="checked"
-                                                   type="hidden">
-                                        </label>
+                                    <div class="search-type">
+                                        <label class="active"><input class="first-tab type-tab" name="search" value="satilik" checked="checked" type="radio">Satılık</label>
+                                        <label><input class="type-tab" name="search" value="kiralik" type="radio">Kiralık</label>
+                                        <label><input class="type-tab" name="search" value="danisman" type="radio">Danışmanlarımız</label>
+                                        <label><input class="type-tab" name="search" value="office" type="radio">Ofislerimiz</label>
                                         <div class="utf-search-type-arrow"></div>
                                     </div>
                                 </div>
@@ -80,108 +80,16 @@
                                             <button class="button utf-search-btn-item"><i class="fa fa-search"></i> Ara
                                             </button>
                                         </div>
-                                        <div class="col-md-2 col-sm-6">
-                                            <a href="#" class="utf-utf-more-search-options-area-button"
-                                               data-open-title="Detaylı Arama" data-close-title="Detaylı Arama"></a>
-                                        </div>
-                                    </div>
-
-                                    <div class="utf-more-search-options-area">
-                                        <div class="utf-more-search-options-area-container">
-                                            <div class="row with-forms">
-                                                <div class="col-md-3">
-                                                    <select data-placeholder="ÜLKE" class="chosen-select"
-                                                            style="display: none;" id="country">
-                                                        <option value=""></option>
-                                                        @foreach(\App\Models\Country::all() as $country)
-                                                            <option
-                                                                value="{{$country->countryID}}">{{$country->countryName}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <select data-placeholder="İL" name="city" class="chosen-select"
-                                                            style="display: none;" id="city">
-                                                        <option value=""></option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <select data-placeholder="İLÇE" name="town" class="chosen-select"
-                                                            style="display: none;" id="town">
-                                                        <option value=""></option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <select name="category"
-                                                            class="utf-chosen-select-single-item">
-                                                        <option value="">İlan Tipi</option>
-                                                        <option value="">Hepsi</option>
-                                                        @foreach(\App\Models\Category::all() as $category)
-                                                            <option
-                                                                value="{{$category->KATEGORI_ID}}">{{$category->KATEGORI}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <select name="type"
-                                                            class="utf-chosen-select-single-item">
-
-                                                        <option value=""> Mülk Türü</option>
-                                                        @foreach(\App\Models\ProductType::all() as $type)
-                                                            <option
-                                                                value="{{$type->CINSI_ID}}"> {{$type->CINSI}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <select name="room_count"
-                                                            class="utf-chosen-select-single-item">
-                                                        <option value="">Oda Sayısı</option>
-                                                        @foreach(\App\Models\RoomCount::all() as $roomCount)
-                                                            <option
-                                                                value="{{$roomCount->ODASAYISI_ID}}">{{$roomCount->DEGER}}</option>
-                                                        @endforeach
-
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <select name="bath_count"
-                                                            class="utf-chosen-select-single-item">
-                                                        <option value="">Banyo</option>
-                                                        @foreach(\App\Models\BathCount::all() as $bathCount)
-                                                            <option
-                                                                value="{{$bathCount->BANYOSAYISI_ID}}">{{$bathCount->DEGER}}
-                                                                Banyo
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="select-input">
-                                                        <input type="number" name="min_price" placeholder="Min Fiyat"
-                                                               data-unit="TL">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="select-input">
-                                                        <input type="number" name="max_price" placeholder="Max Fiyat"
-                                                               data-unit="TL">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="select-input">
-                                                        <input type="number" name="min_place" placeholder="Min Alan"
-                                                               data-unit="m2">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="select-input">
-                                                        <input type="number" name="max_place" placeholder="Max Alan"
-                                                               data-unit="m2">
-                                                    </div>
-                                                </div>
+                                        <div id="detailed_search_button">
+                                            <div class="col-md-2 col-sm-6">
+                                                <a href="#" class="utf-utf-more-search-options-area-button"
+                                                   data-open-title="Detaylı Arama" data-close-title="Detaylı Arama"></a>
                                             </div>
                                         </div>
+
+                                    </div>
+                                    <div id="detailed_search">
+                                        @include('components.search_fields')
                                     </div>
                                 </div>
                             </form>
@@ -197,9 +105,9 @@
     @include('components.home_products',['products'=>$sellings,'type'=>'Kiralık'])
 
 <!-- Featured / End -->
-   @include('components.home_degree')
+    @include('components.home_degree')
 
-    <!-- Start Section Callout -->
+<!-- Start Section Callout -->
     <div class="jbm-section-callout">
         <div class="container-fluid">
             <div class="row">
@@ -232,18 +140,18 @@
                     </div>
                 @endforeach
                 @foreach($homePageTwoPage as $page)
-                <div class="col-md-6 col-sm-6 col-xs-12 callout-bg-2 callout-section-right pos-relative"
-                     style="background-image: url({{Voyager::image($page->image)}});">
-                    <div class="callout-bg"></div>
-                    <div class="jbm-callout-in jbm-callout-in-padding pull-left">
-                        <div class="jbm-section-title margin-bottom-80 margin-top-80">
-                            <h2>{{$page->title}}</h2>
-                            <span class="section-tit-line"></span>
-                            <p>{{$page->description}}.</p>
-                            <a href="{{url($page->link)}}" class="button margin-top-10">Detaylı Bilgi</a>
+                    <div class="col-md-6 col-sm-6 col-xs-12 callout-bg-2 callout-section-right pos-relative"
+                         style="background-image: url({{Voyager::image($page->image)}});">
+                        <div class="callout-bg"></div>
+                        <div class="jbm-callout-in jbm-callout-in-padding pull-left">
+                            <div class="jbm-section-title margin-bottom-80 margin-top-80">
+                                <h2>{{$page->title}}</h2>
+                                <span class="section-tit-line"></span>
+                                <p>{{$page->description}}.</p>
+                                <a href="{{url($page->link)}}" class="button margin-top-10">Detaylı Bilgi</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -278,6 +186,19 @@
 
 
     $(document).ready(function () {
+        var searchFields = $('#detailed_search');
+        var searchButton = $('#detailed_search');
+        $('input[type=radio][name=search]').change(function () {
+            if (this.value == 'kiralik') {
+                $('#detailed_search').css('display', 'block');
+            } else if (this.value == 'satilik') {
+                $('#detailed_search').css('display', 'block');
+            } else if (this.value == 'office') {
+                $('#detailed_search').css('display', 'block');
+            } else if (this.value == 'danisman') {
+                $('#detailed_search').css('display', 'none');
+            }
+        });
         $("#form").submit(function () {
             var qstring = ($("#form").serialize());
             var strings = [];

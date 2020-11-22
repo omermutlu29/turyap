@@ -1,4 +1,5 @@
 <form method="GET" action="{{route('product.filter')}}" id="form">
+    <input type="hidden" name="search" value="none">
     <div class="widget utf-sidebar-widget-item">
         <div class="utf-boxed-list-headline-item">
             <h3>Yeni Ev Bul</h3>
@@ -16,7 +17,7 @@
                 </select>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
-                <select name="type"
+                <select name="ad_type"
                         class="utf-chosen-select-single-item">
 
                     <option value=""> Mülk Türü</option>
