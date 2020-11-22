@@ -20,9 +20,14 @@
                                 <div class="utf-listing-img-content-item">
                                     <span class="utf-listing-compact-title-item">{{$product->TANIM ?? ''}}<i>{{$product->currency->PARA}} {{str_replace(',','.',number_format($product->FIYAT))}}</i></span>
                                 </div>
-                                <img
-                                    src="https://www.port724.com/images/firm/844029/products/57223170/photos/1604408666/1/4119887316125249.JPG"
-                                    alt="">
+                                @if(count($product->images))
+                                    <img src="http://test7.crealive.net/old/uploads/{{$product->agency->SIRKET_ID}}/{{$product->URUN_ID}}/{{$product->images[0]->RESIM_TYPE}}/{{$product->images[0]->RESIM_ADI}}/xsmall.jpg"
+                                        alt="">
+                                @else
+                                    <img src="https://www.port724.com/images/firm/844029/products/57223170/photos/1604408666/1/4119887316125249.JPG"
+                                         alt="">
+                                @endif
+
                                 <ul class="listing-hidden-content">
                                     <li><i class="fa fa-building"></i>Kat : <span>{{$product->current_floor->DEGER??'-'}}</span></li>
                                     <li><i class="icon-feather-codepen"></i> Banyo Sayısı :<span>{{$product->bath_count->DEGER ?? '1'}}</span></li>
