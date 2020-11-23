@@ -101,8 +101,8 @@
     </div>
 
     <!-- Featured -->
-    @include('components.home_products',['products'=>$sellings,'type'=>'Satılık'])
-    @include('components.home_products',['products'=>$sellings,'type'=>'Kiralık'])
+    @include('components.home_products',['products'=>$sellings,'type'=>'SATILIK'])
+    @include('components.home_products',['products'=>$sellings,'type'=>'KİRALIK'])
 
 <!-- Featured / End -->
     @include('components.home_degree')

@@ -2,10 +2,7 @@
     <div class="row">
         <div class="col-md-12 margin-top-75">
             <div class="utf-section-headline-item centered margin-bottom-30 margin-top-0">
-                <h3 class="headline">
-                   {{$type}} İlanlar
-                </h3>
-                <div class="utf-headline-display-inner-item">Öne Çıkan {{$type}} İlanlar</div>
+                <div class="utf-headline-display-inner-item">{{$type}} PORTFÖYLER</div>
                 <p class="utf-slogan-text"></p>
             </div>
         </div>
