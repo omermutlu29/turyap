@@ -1,11 +1,9 @@
 <section class="fullwidth" data-background-color="#fbfbfb" style="background: rgb(251, 251, 251);">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 margin-bottom-20">
                 <div class="utf-section-headline-item centered margin-bottom-30 margin-top-0">
-
                     <div class="utf-headline-display-inner-item">Yeni Ofislerimiz</div>
-
                 </div>
             </div>
             @foreach($degrees as $degree)
