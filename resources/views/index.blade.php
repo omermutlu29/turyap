@@ -45,11 +45,11 @@
     <div class="clearfix"></div>
 
     <!-- Banner -->
-    <div class="parallax"
-         data-background="{{Voyager::image(\App\Models\HomePageBanner::orderBy('created_at','DESC')->first()->path )?? 'http://test3.crealive.net/turyap/images/home-1.jpg'}}"
+    <div class="parallax" style="height: 520px;"
+         data-background="{{Voyager::image(\App\Models\HomePageBanner::inRandomOrder()->get()[0]->path )?? 'http://test3.crealive.net/turyap/images/home-1.jpg'}}"
          data-color="#36383e"
          data-color-opacity="0.72" data-img-width="2500" data-img-height="1600">
-        <div class="utf-parallax-content-area">
+        <div class="utf-parallax-content-area" >
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
