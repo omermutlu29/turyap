@@ -10,7 +10,7 @@
             </div>
             @foreach($degrees as $degree)
                 <div class="col-md-4 col-sm-6">
-                    <div class="utf-icon-box-item-area" style="background-image: image({{Voyager::image($degree->image)}})">
+                    <div class="utf-icon-box-item-area" style="background-image: url('{{Voyager::image($degree->image)}}')">
                         <div class="icon-container">
                         </div>
                         <h3>{{$degree->degree}}</h3>
