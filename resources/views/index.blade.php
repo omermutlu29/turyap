@@ -72,7 +72,7 @@
                                 <div class="utf-main-search-box-area">
                                     <div class="row with-forms">
                                         <div class="col-md-8 col-sm-12">
-                                            <input type="text" name="search_text" class="ico-01" placeholder=""
+                                            <input type="text" name="search_text" class="ico-01" placeholder="Anahtar kelime, danışman adı ve ya ofis adı ile arama yapabilirsiniz..."
                                                    value=""/>
                                         </div>
 
