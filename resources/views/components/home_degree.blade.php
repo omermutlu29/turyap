@@ -1,6 +1,6 @@
 <section class="fullwidth" data-background-color="#fbfbfb" style="background: rgb(251, 251, 251);">
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-bottom: 75px;">
             <div class="col-md-12">
                 <div class="utf-section-headline-item centered margin-bottom-30 margin-top-0">
                     <div class="utf-headline-display-inner-item">Yeni Ofislerimiz</div>
