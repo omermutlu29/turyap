@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>Francihse</h2>
+            <h2>Franchise</h2>
             <p>1985 yılında kurulan Turyap, 300'e yakın yurtiçi ve yurtdışı temsilciliği ve 2000'ne yakın çalışanıyla
                 gayrimenkul sektörünün en köklü ve yaygın organizasyonudur.
                 Gayrimenkul danışmanlığını batıdaki gibi saygın ve popüler bir meslek olarak tanınmasını sağlayan

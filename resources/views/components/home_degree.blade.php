@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="utf-section-headline-item centered margin-bottom-30 margin-top-0">
-                    <h3 class="headline"><span>Birinciler</span>Geçen Ayın Birinci Ofisi</h3>
-                    <div class="utf-headline-display-inner-item">Geçen Ayın Birinci Ofisi</div>
+
+                    <div class="utf-headline-display-inner-item">Yeni Ofislerimiz</div>
 
                 </div>
             </div>
