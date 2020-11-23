@@ -15,10 +15,7 @@
                         background-position: center;
                         height: 400px;
                         width: 300px;">
-                        <div class="icon-container">
-                        </div>
-                        <h3>{{$degree->degree}}</h3>
-                        <p>{{$degree->name_surname}}</p>
+
                     </div>
                 </div>
             @endforeach
