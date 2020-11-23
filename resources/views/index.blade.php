@@ -102,7 +102,7 @@
 
     <!-- Featured -->
     @include('components.home_products',['products'=>$sellings,'type'=>'SATILIK'])
-    @include('components.home_products',['products'=>$sellings,'type'=>'KİRALIK'])
+    @include('components.home_products',['products'=>$rentings,'type'=>'KİRALIK'])
 
 <!-- Featured / End -->
     @include('components.home_degree')
