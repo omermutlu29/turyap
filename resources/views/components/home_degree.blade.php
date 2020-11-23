@@ -10,7 +10,7 @@
             </div>
             @foreach($degrees as $degree)
                 <div class="col-md-4 col-sm-6">
-                    <div class="utf-icon-box-item-area" style="background-image: url('{{Voyager::image($degree->image)}}');    background-image: url(https://turyap.pinokyov.com/storage/degrees/November2020/YL045QoEEHgPmkAcXEEp.png);
+                    <div class="utf-icon-box-item-area" style="background-image: url('{{Voyager::image($degree->image)}}');
                         background-size: cover;
                         background-position: center;
                         height: 400px;
