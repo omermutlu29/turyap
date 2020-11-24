@@ -22,7 +22,7 @@
                 <h4>Kaynaklar</h4>
                 <ul class="utf-footer-links-item">
                     <li><a href="{{route('product.index')}}">İlanlar</a></li>
-                    <li><a href="{{route('agency.list')}}">Acentalar</a></li>
+                    <li><a href="{{route('agency.list')}}">Franchiselarımız</a></li>
                     <li><a href="{{route('agent.list')}}">Danışmanlar</a></li>
                     <li><a href="{{route('page',['page'=>'banka-gayrimenkulleri'])}}">Banka Gayrimenkulleri</a></li>
                 </ul>

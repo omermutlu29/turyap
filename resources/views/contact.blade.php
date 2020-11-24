@@ -19,10 +19,10 @@
                 <!-- Contact Details -->
                 <div class="utf-contact-location-info-aera sidebar-textbox margin-bottom-40">
                     <ul class="contact-details">
-                        <li><i class="icon-feather-smartphone"></i> <strong>Telefon:</strong> <span>(+21) 124 123 4546</span></li>
-                        <li><i class="icon-material-outline-email"></i> <strong>Email Adresimiz:</strong> <span><a href="#">info@example.com</a></span></li>
-                        <li><i class="icon-feather-globe"></i> <strong>Website:</strong> <span>www.example.com</span></li>
-                        <li><i class="icon-feather-map-pin"></i> <strong>Adres:</strong> <span>3241, Lorem ipsum dolor sit amet, consectetur adipiscing elit Proin fermentum condimentum mauris.</span></li>
+                        <li><i class="icon-feather-smartphone"></i> <strong>Telefon:</strong> <span>+90 212-373 13 00</span></li>
+                        <li><i class="icon-material-outline-email"></i> <strong>Email Adresimiz:</strong> <span><a href="#">info@turyap.com.tr</a></span></li>
+                        <li><i class="icon-feather-globe"></i> <strong>Website:</strong> <span>http://www.turyap.com.tr</span></li>
+                        <li><i class="icon-feather-map-pin"></i> <strong>Adres:</strong> <span>MERKEZ MAH. AYAZMA CAD. NO:21 D BLOK D102 NEF 11 Kağıthane / Kağıthane 34400, İstanbul</span></li>
                     </ul>
                 </div>
             </div>
