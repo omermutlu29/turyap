@@ -1,4 +1,4 @@
-<div class="vfx-loader">
+<!--<div class="vfx-loader">
     <div class="loader-wrapper">
         <div class="loader-content">
             <div class="loader-dot dot-1"></div>
@@ -12,4 +12,4 @@
             <div class="loader-dot dot-center"></div>
         </div>
     </div>
-</div>
+</div>-->
