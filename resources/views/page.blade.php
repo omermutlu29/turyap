@@ -9,7 +9,7 @@
                 </div>
             @endif
             <div class="row">
-                @if($is_form_page > 0)
+                @if($page->is_form_page > 0)
                     <div class="col-md-6">
                         {!! $page->body ?? '<p>İçerik Bulunamadı</p>' !!}
                     </div>
