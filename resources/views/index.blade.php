@@ -31,7 +31,7 @@
     <div class="clearfix"></div>
 
     <!-- Banner -->
-    <div class="parallax" style="height: 520px;"
+    <div class="parallax"
          data-background="{{Voyager::image(\App\Models\HomePageBanner::inRandomOrder()->get()[0]->path )?? 'http://test3.crealive.net/turyap/images/home-1.jpg'}}"
          data-color="#36383e"
          data-color-opacity="0.72" data-img-width="2500" data-img-height="1600">
