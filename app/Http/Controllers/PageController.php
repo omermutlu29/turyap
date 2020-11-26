@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Degree;
+use App\Models\FormPage;
 use App\Models\Franchise;
 use App\Models\HomePageAdType;
 use App\Models\Product;
@@ -23,6 +24,8 @@ class PageController extends Controller
         $title='Anasayfa';
         return view('index',compact('title','sellings','rentings','homePageAds','homePageThreePage','homePageTwoPage','degrees'));
     }
+
+
 
 
 

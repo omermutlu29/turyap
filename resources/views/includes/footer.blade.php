@@ -24,7 +24,7 @@
                     <li><a href="{{route('product.index')}}">İlanlar</a></li>
                     <li><a href="{{route('agency.list')}}">Franchiselarımız</a></li>
                     <li><a href="{{route('agent.list')}}">Danışmanlar</a></li>
-                    <li><a href="{{route('page',['page'=>'banka-gayrimenkulleri'])}}">Banka Gayrimenkulleri</a></li>
+                    <li><a href="{{route('page',['page'=>'banka-gayrimenkulleri'])}}">Kurumsal Satış</a></li>
                 </ul>
             </div>
             <div class="col-md-2 col-sm-3 col-xs-6">
