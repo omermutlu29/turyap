@@ -90,7 +90,7 @@ class ProductController extends Controller
         $fields = $arr->getAttributes();
 
         foreach ($fields as $key => $value) {
-            if ($key == 'id' || $key == 'TUR_ID' || $key == 'KAYIT_ID') {
+            if ($key == 'ID' || $key == 'TUR_ID' || $key == 'KAYIT_ID') {
                 unset($fields[$key]);
             }
             if ($arr[$key] == null) {
