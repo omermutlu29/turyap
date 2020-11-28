@@ -5,7 +5,7 @@
             <div class="col-md-3">
                 <select data-placeholder="İL" name="city" class="chosen-select"
                         style="display: none;" id="city">
-                    <option value="">SEÇİNİZ</option>
+                    <option value="">İL</option>
                     @foreach(\App\Models\City::where('countryID',1)->get() as $city)
                         <option value="{{$city->cityID}}">{{$city->city}}</option>
                     @endforeach
@@ -18,18 +18,8 @@
                     <option value=""></option>
                 </select>
             </div>
+
             <div class="col-md-3">
-                <select name="category"
-                        class="utf-chosen-select-single-item">
-                    <option value="">İlan Tipi</option>
-                    <option value="">Hepsi</option>
-                    @foreach(\App\Models\Category::all() as $category)
-                        <option
-                            value="{{$category->KATEGORI_ID}}">{{$category->KATEGORI}}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="col-md-4">
                 <select name="type"
                         class="utf-chosen-select-single-item">
 
@@ -40,7 +30,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <select name="room_count"
                         class="utf-chosen-select-single-item">
                     <option value="">Oda Sayısı</option>
