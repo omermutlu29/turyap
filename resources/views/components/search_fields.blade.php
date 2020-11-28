@@ -1,20 +1,14 @@
 <div class="utf-more-search-options-area" id="">
     <div class="utf-more-search-options-area-container">
         <div class="row with-forms">
-            <div class="col-md-3">
-                <select data-placeholder="ÜLKE" class="chosen-select"
-                        style="display: none;" id="country">
-                    <option value=""></option>
-                    @foreach(\App\Models\Country::all() as $country)
-                        <option
-                            value="{{$country->countryID}}">{{$country->countryName}}</option>
-                    @endforeach
-                </select>
-            </div>
+
             <div class="col-md-3">
                 <select data-placeholder="İL" name="city" class="chosen-select"
                         style="display: none;" id="city">
-                    <option value=""></option>
+                    <option value="">SEÇİNİZ</option>
+                    @foreach(\App\Models\City::where('countryID',1)->get() as $city)
+                        <option value="{{$city->cityID}}">{{$city->city}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="col-md-3">
@@ -57,18 +51,7 @@
 
                 </select>
             </div>
-            <div class="col-md-4">
-                <select name="bath_count"
-                        class="utf-chosen-select-single-item">
-                    <option value="">Banyo</option>
-                    @foreach(\App\Models\BathCount::all() as $bathCount)
-                        <option
-                            value="{{$bathCount->BANYOSAYISI_ID}}">{{$bathCount->DEGER}}
-                            Banyo
-                        </option>
-                    @endforeach
-                </select>
-            </div>
+
             <div class="col-md-3">
                 <div class="select-input">
                     <input type="number" name="min_price"
