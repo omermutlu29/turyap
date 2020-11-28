@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12 margin-top-75">
             <div class="utf-section-headline-item centered margin-bottom-30 margin-top-0">
-                <div class="utf-headline-display-inner-item">{{$type}} PORTFÖYLER</div>
+                <div class="utf-headline-display-inner-item">{{$type}} EN YENİLER</div>
                 <p class="utf-slogan-text"></p>
             </div>
         </div>

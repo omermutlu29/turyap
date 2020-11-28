@@ -25,7 +25,7 @@
             </div>
             <div class="right-side">
                 <ul class="right-menu hidden-xs hidden-sm">
-                    <li><a href="{{url('franchise')}}">FRANCHISE</a></li>
+                    <li><a href="{{url('franchise')}}">FRANCHISE BAŞVURU</a></li>
                     <li><a href="{{route('page',['page'=>'muzayede'])}}">TURYAPNET</a></li>
                 </ul>
                 <div class="header-widget">

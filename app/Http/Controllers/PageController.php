@@ -15,8 +15,8 @@ class PageController extends Controller
 {
 
     public function index(){
-        $rentings= Product::where('KATEGORI_ID',1)->limit(3)->get();
-        $sellings= Product::where('KATEGORI_ID',2)->limit(3)->get();
+        $rentings= Product::where('KATEGORI_ID',1)->limit(10)->get();
+        $sellings= Product::where('KATEGORI_ID',2)->limit(10)->get();
         $homePageAds=HomePageAdType::where('type','ad')->limit(2)->get();
         $homePageThreePage=HomePageAdType::where('type','three_page')->limit(3)->get();
         $homePageTwoPage=HomePageAdType::where('type','two_page')->limit(2)->get();
