@@ -92,7 +92,7 @@
                 <div class="sidebar">
                     <div class="widget utf-sidebar-widget-item">
                         <div class="utf-detail-banner-add-section">
-                            <a href="#"><img src="https://www.port724.com/images/site/269364/photos/1499564456/o_1bkig5quefdd14dh1hq81671172a35.jpg" alt="banner-add-2"></a>
+                            <a href="#"><img src="{{asset('images/phototuryap.jpg')}}" alt="banner-add-2"></a>
                         </div>
                     </div>
 
