@@ -9,6 +9,7 @@
         <div class="col-md-12">
             <div class="carousel">
                 @foreach($products as $product)
+                    @if($product->agency != null)
                     <div class="utf-carousel-item-area">
                         <div class="utf-listing-item compact">
                             <a href="{{route('product.show',$product->URUN_ID)}}" class="utf-smt-listing-img-container">
@@ -18,6 +19,7 @@
                                     <span class="utf-listing-compact-title-item">{{$product->TANIM ?? ''}}<i>{{$product->currency->PARA}} {{str_replace(',','.',number_format($product->FIYAT))}}</i></span>
                                 </div>
                                 @if(count($product->images))
+
                                     <img src="http://test7.crealive.net/old/uploads/{{$product->agency->SIRKET_ID}}/{{$product->URUN_ID}}/{{$product->images[0]->RESIM_TYPE}}/{{$product->images[0]->RESIM_ADI}}/xsmall.jpg"
                                         alt="">
                                 @else
@@ -34,6 +36,7 @@
                             </a>
                         </div>
                     </div>
+                    @endif
             @endforeach
             <!-- Listing Item / End -->
             </div>

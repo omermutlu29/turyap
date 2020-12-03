@@ -6,9 +6,12 @@
 
         <div class="utf-listing-carousel-item">
             @if(count($product->images)>0)
+                @if($product->agency != null)
+
                     <div><img
                             src="http://test7.crealive.net/old/uploads/{{$product->agency->SIRKET_ID}}/{{$product->URUN_ID}}/{{$product->images[0]->RESIM_TYPE}}/{{$product->images[0]->RESIM_ADI}}/small.jpg"
                             alt=""></div>
+                @endif
             @else
             @endif
         </div>

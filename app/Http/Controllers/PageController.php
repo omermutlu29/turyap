@@ -19,10 +19,12 @@ class PageController extends Controller
         $sellings= Product::where('KATEGORI_ID',2)->limit(10)->get();
         $homePageAds=HomePageAdType::where('type','ad')->limit(2)->get();
         $homePageThreePage=HomePageAdType::where('type','three_page')->limit(3)->get();
+        $homePageThreePage2=HomePageAdType::where('type','three_page_2')->limit(3)->get();
         $homePageTwoPage=HomePageAdType::where('type','two_page')->limit(2)->get();
+        $homePageTwoPage2=HomePageAdType::where('type','two_page_2')->limit(2)->get();
         $degrees=Degree::limit(3)->get();
         $title='Anasayfa';
-        return view('index',compact('title','sellings','rentings','homePageAds','homePageThreePage','homePageTwoPage','degrees'));
+        return view('index',compact('title','sellings','rentings','homePageAds','homePageThreePage2','homePageThreePage','homePageTwoPage','homePageTwoPage2','degrees'));
     }
 
 
